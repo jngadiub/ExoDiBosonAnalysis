@@ -1,0 +1,13 @@
+[StackPlots]
+data = ExoDiBosonAnalysis.SingleMuRun2012.root
+signal =  
+scalesignal = 1.
+prefix = ../../AnalysisOutput/
+filelist = ['ExoDiBosonAnalysis.TTbar.root','ExoDiBosonAnalysis.WJetsPt180.root','ExoDiBosonAnalysis.VV.root','ExoDiBosonAnalysis.SingleTop.root']
+lumi = 19764.
+histos = ['leptonictopmass','hadronictopmass']
+bkg = ['t#bar{t}','W + jets','WW/WZ/ZZ','Single Top']
+signalname = W'(1 TeV)
+sfwjets = 1.747
+rebin = 1
+ttbarunc = 15.

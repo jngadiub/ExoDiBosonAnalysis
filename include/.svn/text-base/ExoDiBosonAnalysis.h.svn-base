@@ -1,0 +1,202 @@
+#ifndef ExoDiBosonAnalysis_H
+#define ExoDiBosonAnalysis_H
+
+#include "core/include/SCycleBase.h"
+
+#include "TLorentzVector.h"
+
+#include "../ExoDiBosonAnalysis/include/InputData.h"
+#include "../ExoDiBosonAnalysis/include/PUWeight.h"
+#include "../ExoDiBosonAnalysis/include/LHEWeight.h"
+#include "../ExoDiBosonAnalysis/include/HLTWeight.h"
+#include "../ExoDiBosonAnalysis/include/BTagWeight.h"
+#include "../ExoDiBosonAnalysis/include/LumiWeight.h"
+#include "../ExoDiBosonAnalysis/include/JetCandidate.h"
+#include "../ExoDiBosonAnalysis/include/LeptonCandidate.h"
+#include "../ExoDiBosonAnalysis/include/METCandidate.h"
+#include "../ExoDiBosonAnalysis/include/HiggsCandidate.h"
+
+class HistosManager;
+class NtupleManager;
+
+class ExoDiBosonAnalysis : public SCycleBase {
+
+public:
+   ExoDiBosonAnalysis();
+   ~ExoDiBosonAnalysis();
+
+   virtual void BeginCycle() throw( SError );
+   virtual void EndCycle() throw( SError );
+
+   virtual void BeginInputData( const SInputData& ) throw( SError );
+   virtual void EndInputData  ( const SInputData& ) throw( SError );
+
+   virtual void BeginInputFile( const SInputData& ) throw( SError );
+
+   virtual void ExecuteEvent( const SInputData&, Double_t ) throw( SError );
+   
+   void setGenCandidates          ( void );
+   bool foundGenCandidates        ( void );
+   bool selectChannel             ( void );
+   
+   void setWeight                 ( TString infile );
+   void initWeight                ( void );
+   
+   void initData                  ( void );
+   void reset                     ( void );
+   InputData& getData             ( void ){ return data_; }
+   void setNtupleManager          ( NtupleManager* ntupleManager ){ theNtupleManager_ = ntupleManager; }
+   void printCutFlow              ( void );
+
+   void fillHistos                ( void );
+
+   double getMuonScale            ( double oldpt );
+              
+   bool passedSelections          ( void );
+   bool passedTrigger             ( void );
+
+   bool findLeptonCandidate       ( void );     
+   bool findMuonCandidate         ( void ); 
+   bool findElectronCandidate     ( void ); 
+   bool findMETCandidate          ( void );
+   bool findWCandidate            ( void );
+   bool findJetCandidate          ( void );
+   void findExtraJets             ( void );
+   void findTopCandidate          ( void );
+   void findExoCandidate          ( void );   
+     
+private:
+   ClassDef( ExoDiBosonAnalysis, 0 );  
+       
+   HistosManager* theHistosManager_;
+   NtupleManager* theNtupleManager_;
+   InputData      data_            ;
+   PUWeight       PUWeight_        ;
+   LHEWeight      LHEWeight_       ;
+   HLTWeight      HLTWeight_       ;
+   BTagWeight     BTagWeight_      ;
+   LumiWeight     LumiWeight_      ;
+
+   std::map<int,TLorentzVector> genCandidates_  ;
+   std::vector<LeptonCandidate> leptonCand_     ;
+   std::vector<std::vector<JetCandidate> > SubjetCand_;
+   std::vector<JetCandidate>    AK5jetCand_     ;
+   std::vector<JetCandidate>    CA8jetCand_     ;
+   std::vector<METCandidate>    METCand_        ;
+   std::vector<HiggsCandidate>  WCand_          ;
+
+   // XML configuration //
+   
+   /* general settings */         
+   std::string    InputTreeName_   ;
+   std::string    OutputTreeName_  ;   
+   bool           isSignal_        ;
+   bool           runOnMC_         ;
+   bool           genFilter_       ;
+   std::string    Flavour_         ; 
+   std::string    Channel_         ; 
+   bool           Trigger_         ;
+
+   /* leptonic selections */
+   double         leptPtCut_	   ;
+   double         leptEtaCut_	   ;
+   double         AleptPtCut_	   ;
+   double         AleptEtaCut_     ;
+   double         METCut_  	   ;
+   double         WptCut_  	   ;
+   
+   /* jet selections */
+   double         JetPtCutLoose_   ;
+   double         JetPtCutTight_   ;
+   double         JetEtaCut_	   ;   
+   int            nSubjetsCut_	   ;
+   bool           SubjetbTag_      ;
+   bool           CombinedbTag_    ;
+   bool           FatjetbTag_      ;  
+   std::string    SubjetsBtagWP_   ;
+   std::string    FatjetBtagWP_    ;
+   
+   /* btag veto */
+   int            nAJetCut_	   ; // if it's -1 the cut is not applied
+   std::string    BtagVetoWP_      ;
+
+   /* top mass veto */
+   bool           TopMassCut_      ;
+   double         leptTopMassLow_  ;
+   double         leptTopMassHigh_ ;
+   double         hadrTopMassLow_  ;
+   double         hadrTopMassHigh_ ;
+   
+   /* pruned mass */
+   bool           VetoSR_          ;
+   double         mLow_		   ;
+   double         mHigh_	   ;
+    
+   /* WH mass window */
+   double         WHMass_          ; // if it's -1 no window is applied otherwise put the mass of the resonance and the 15% window is automatically taken into account
+      
+   /* weights settings */            
+   std::string    LHEsample_       ;
+   double         xSec_            ;
+   double         genEvents_       ;
+   double         Lumi_            ;
+   std::string    PUProfileData_   ;
+   std::string    BTagEff4vetoData_  ;
+   std::string    BTagEff4fatjetData_;
+   std::string    BTagEff4subjetData_;
+   
+   /* systematics */
+   bool           BtagSFSysUp_      ;
+   bool           BtagSFSysDown_    ;
+   bool           BtagSFSysUpVeto_  ;
+   bool           BtagSFSysDownVeto_;
+   bool           BtagEffSysUp_     ;
+   bool           BtagEffSysDown_   ;
+   int            ScaleMuonUpDown_  ;
+
+   // END OF XML CONFIGURATION //
+   
+   std::map<std::string,double> bTagWPmap_;
+   int            jetIndex_ ;
+   bool           isSJ2_    ;
+   bool           isFJ_     ;
+   int            channel   ;
+      
+   float weight_      ;
+   float lheweight_   ;
+   float puweight_    ;
+   float hltweight_   ;
+   float btagweight_  ;
+   float lumiweight_  ;
+   float btagvetow    ; 
+   float htagw        ;   
+
+   float  MWH          ;
+   float  htopmass     ;
+   float  ltopmass     ;
+   float  Mj           ;
+   
+   int    nEvents_                ;
+   int    nPassedTrigger_         ;  
+   int    nPassedFoundLept_       ;
+   int    nPassedFoundMET_        ;
+   int    nPassedFoundW_          ;
+   int    nPassedFoundJet_        ;
+   int    nPassedLepJetDR_        ;
+   int    nPassedJetPtTight_      ;
+   int    nPassedTOBTECFilter_    ;
+   int    nPassedNsubj_           ;
+   int    nPassedDRsubj_          ;  
+   int    nPassedJetCSV_          ;
+   int    nPassedAJetCut_         ;
+   int    nPassedLepJetDR2_       ;
+   int    nPassedMETJetDPhi_      ;
+   int    nPassedJetWDPhi_        ;
+   int    nPassedTopMass_         ;         
+   int    nPassedJetMass_         ;
+   int    nPassedExoCandidateMass_;
+
+}; // class ExoDiBosonAnalysis
+
+#endif // ExoDiBosonAnalysis_H
+

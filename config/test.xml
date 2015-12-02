@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE JobConfiguration PUBLIC "" "/shome/jngadiub/EXOVVAnalysisRunII/SFrame-04-00-01/user/config/JobConfig.dtd">
+<JobConfiguration JobName="exovvJob" OutputLevel="INFO">
+  <Library Name="libGoodRunsLists" />
+  <Library Name="libExoDiBosonAnalysis" />
+
+  <Package Name="SFrameCore.par" />
+  <Package Name="ExoDiBosonAnalysis.par" />
+
+  <Cycle Name="ExoDiBosonAnalysis" RunMode="LOCAL" UseTreeCache="True" TreeCacheSize="30000000" TreeCacheLearnEntries="10" ProofServer="lite" ProofWorkDir="" OutputDirectory="./" PostFix="" TargetLumi="0.00706713780919">
+    <InputData Lumi="0.0" Type="SingleMuon25ns_SilverJSON" Version="SingleMuon25ns_SilverJSON" NEventsMax="-1" NEventsSkip="0" SkipValid="True" >
+         <In FileName="dcap://t3se01.psi.ch:22125//pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Data_25ns/SingleMuon_SilverJSON/EXOVVTree_SingleMuon_Run2015D-05Oct2015-v1_102.root" Lumi="1.0"/>
+         <In FileName="dcap://t3se01.psi.ch:22125//pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Data_25ns/SingleMuon_SilverJSON/EXOVVTree_SingleMuon_Run2015D-05Oct2015-v1_103.root" Lumi="1.0"/>
+      <InputTree Name="ntuplizer/tree" />
+      <OutputTree Name="tree" />
+    </InputData>
+
+    <UserConfig>
+      <Item Name="runOnMC" Value="false" />
+      <Item Name="Trigger" Value="true" />
+      <Item Name="Lumi" Value="1." />
+      <Item Name="VetoSR" Value="true" />
+      <Item Name="InputTreeName" Value="tree" />
+      <Item Name="OutputTreeName" Value="tree" />
+      <Item Name="isSignal" Value="false" />
+      <Item Name="GenFilter" Value="false" />
+      <Item Name="Flavour" Value="" />
+      <Item Name="Channel" Value="muon" />
+      <Item Name="Synch" Value="true" />
+      <Item Name="applyFilters" Value="true" />
+      <Item Name="JSONfile" Value="/shome/jngadiub/EXOVVAnalysisRunII/ExoDiBosonAnalysis/data/GoldenJSON_2p11.txt" />
+      <Item Name="LeptPtCut" Value="53" />
+      <Item Name="LeptEtaCut" Value="2.1" />
+      <Item Name="AleptPtCut" Value="20" />
+      <Item Name="AleptEtaCut" Value="2.4" />
+      <Item Name="METCut" Value="40" />
+      <Item Name="WptCut" Value="200" />
+      <Item Name="JetPtCutLoose" Value="80" />
+      <Item Name="JetPtCutTight" Value="200" />
+      <Item Name="JetEtaCut" Value="2.4" />
+      <Item Name="Tau21Cut" Value="HP" />
+      <Item Name="SubjetsBtagWP" Value="CSVL" />
+      <Item Name="NsubjBTag" Value="-1" />
+      <Item Name="nAJetCut" Value="0" />
+      <Item Name="BtagVetoWP" Value="CSVM" />
+      <Item Name="AngularCuts" Value="true" />
+      <Item Name="TopMassCut" Value="false" />
+      <Item Name="leptTopMassLow" Value="120." />
+      <Item Name="leptTopMassHigh" Value="240." />
+      <Item Name="hadrTopMassLow" Value="160." />
+      <Item Name="hadrTopMassHigh" Value="280." />
+      <Item Name="JetMassAlgo" Value="pruning" />
+      <Item Name="mLow" Value="65." />
+      <Item Name="mHigh" Value="105." />
+      <Item Name="WWMass" Value="-1" />
+      <Item Name="xSec" Value="1." />
+      <Item Name="genEvents" Value="1." />
+      <Item Name="PUdata" Value="/shome/jngadiub/EXOVVAnalysisRunII/ExoDiBosonAnalysis/data/biasXsec_72000.root" />
+      <Item Name="BTagEff4vetoData" Value="/shome/jngadiub/EXOVVAnalysis/ExoDiBosonAnalysis/data/TT_CT10_TuneZ2star_8TeV-powheg-tauola_AK5PF_CSVM_bTaggingEfficiencyMap.root" />
+      <Item Name="BTagEff4fatjetData" Value="/shome/jngadiub/EXOVVAnalysis/ExoDiBosonAnalysis/data/BtagEfficienciesMap_fatjets_Wp.root" />
+      <Item Name="BTagEff4subjetData" Value="/shome/jngadiub/EXOVVAnalysis/ExoDiBosonAnalysis/data/btag-efficiency-maps.root" />
+      <Item Name="BstagSFSysUpVeto" Value="false" />
+      <Item Name="BtagSFSysDownVeto" Value="false" />
+      <Item Name="BtagSFSysUp" Value="false" />
+      <Item Name="BtagSFSysDown" Value="false" />
+      <Item Name="BtagSFSysDown" Value="false" />
+      <Item Name="ScaleMuonUpDown" Value="0" />
+      <Item Name="ScalePrunedMassResidual" Value="0" />
+      <Item Name="ScalePrunedMassUp" Value="false" />
+      <Item Name="ScalePrunedMassDown" Value="false" />
+      <Item Name="JetMassResolutionUpDown" Value="0" />
+      <Item Name="JetEnergyResolutionUpDown" Value="0" />
+      <Item Name="ScaleJESUp" Value="false" />
+      <Item Name="ScaleJESDown" Value="false" />
+      <Item Name="JMRSigmaMCPTData" Value="/shome/jngadiub/EXOVVAnalysisRunII/ExoDiBosonAnalysis/data/sigmaMC_pT_JMR.root" />
+      <Item Name="JERSigmaMCPTData" Value="/shome/jngadiub/EXOVVAnalysisRunII/ExoDiBosonAnalysis/data/sigmaMC_pT_JER.root" />
+
+    </UserConfig>
+  </Cycle>
+</JobConfiguration>

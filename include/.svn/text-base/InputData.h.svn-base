@@ -1,0 +1,119 @@
+#ifndef INPUTDATA_H
+#define INPUTDATA_H
+
+#include <vector>
+#include <TLorentzVector.h>
+
+class InputData {
+
+public:
+   InputData( void );
+   ~InputData( void );
+
+   std::vector<int  >*		   genParticle_pdgId 	 ;
+   std::vector<int  >*		   genParticle_status 	 ;
+   std::vector<float>*		   genParticle_pt    	 ;
+   std::vector<float>*  	   genParticle_mass  	 ;
+   std::vector<float>*		   genParticle_e     	 ;
+   std::vector<float>*		   genParticle_eta   	 ;
+   std::vector<float>*		   genParticle_phi   	 ;
+   std::vector<std::vector<int> >* genParticle_mother 	 ;
+   std::vector<std::vector<int> >* genParticle_dau   	 ;
+   float                           lheV_pt               ;
+   
+   int                             nlep              	 ;
+   std::vector<float>*    	   lep_e             	 ;
+   std::vector<float>*  	   lep_eta           	 ;
+   std::vector<float>*  	   lep_pt            	 ;
+   std::vector<float>*  	   lep_phi           	 ;
+   std::vector<int  >*  	   lep_type	     	 ;
+   std::vector<float>*  	   lep_pfDeltaCorrRelIso ;
+   std::vector<float>*  	   lep_trackIso          ;   
+   std::vector<int  >*  	   lep_tightId           ;
+   std::vector<int  >*  	   lep_isHEEP            ;   
+   std::vector<float>*             lep_chargedHadIsoBoost;
+   std::vector<float>*             lep_neutralHadIsoBoost;
+   std::vector<float>*             lep_photonIsoBoost    ;
+   std::vector<int  >*             lep_isHighPtMuon      ;
+   std::vector<int  >*  	   lep_isGlobalMuon	 ;
+   
+   std::vector<float>* 	           MET_et                ;
+   std::vector<float>* 	           MET_phi               ;
+   
+   int                             njetsAK5          	 ;
+   std::vector<float>*		   jetAK5_pt	     	 ;
+   std::vector<float>*		   jetAK5_eta	     	 ;
+   std::vector<float>*		   jetAK5_phi	     	 ;
+   std::vector<float>*		   jetAK5_e	     	 ;
+   std::vector<float>*		   jetAK5_csv	     	 ;
+   std::vector<int  >*		   jetAK5_flavor	 ;
+   std::vector<bool  >*  	   jetAK5_IDLoose        ;  
+   
+   int                             njetsCA8          	 ;
+   std::vector<float>*		   jetCA8_pt	     	 ;
+   std::vector<float>*		   jetCA8_eta	     	 ;
+   std::vector<float>*		   jetCA8_phi	     	 ;
+   std::vector<float>*		   jetCA8_e	     	 ;
+   std::vector<float>*		   jetCA8_mass	     	 ;
+   std::vector<float>*		   jetCA8_csv	     	 ;
+   std::vector<int  >*             jetCA8_nm             ;
+   std::vector<int  >*             jetCA8_cm             ;
+   std::vector<float>*             jetCA8_che             ;
+   std::vector<float>*             jetCA8_ne             ;
+   std::vector<float>*		   jetCA8_tau1	     	 ;
+   std::vector<float>*		   jetCA8_tau2	     	 ;
+   std::vector<float>*		   jetCA8_tau3	     	 ;
+   std::vector<bool  >*  	   jetCA8_IDLoose        ;  
+   std::vector<int   >*  	   jetCA8_flavor         ;
+   std::vector<int   >*  	   jetCA8_nconstituents  ;
+      
+   int                             njetsCA8pruned    	 ;
+   std::vector<float>*		   jetCA8pruned_pt   	 ;
+   std::vector<float>*		   jetCA8pruned_eta  	 ;
+   std::vector<float>*		   jetCA8pruned_phi  	 ;
+   std::vector<float>*		   jetCA8pruned_e    	 ;
+   std::vector<float>*		   jetCA8pruned_mass 	 ;
+
+   std::vector<int>*    	      nsubjets           ;
+   std::vector< std::vector<float> >* subjetCA8pruned_csv;    
+   std::vector< std::vector<float> >* subjetCA8pruned_pt ;    
+   std::vector< std::vector<float> >* subjetCA8pruned_eta;    
+   std::vector< std::vector<float> >* subjetCA8pruned_phi;    
+   std::vector< std::vector<float> >* subjetCA8pruned_e  ;    
+   std::vector< std::vector<int> >*   subjetCA8pruned_flavor;    
+       
+   std::vector<int  >*             nPUTrue               ;
+   std::vector<int  >*             bX                    ;
+   int                             nPVs                  ; 
+   int                             EVENT_event           ;
+   int                             EVENT_run             ;
+   int                             EVENT_lumi            ;
+
+   bool isFired_HLT_Mu40_eta2p1_v9 ;
+   bool isFired_HLT_Mu40_eta2p1_v10;
+   bool isFired_HLT_Mu40_eta2p1_v11;
+   bool isFired_HLT_Ele80_CaloIdVT_TrkIdT_v8   ;  
+   bool	isFired_HLT_Ele80_CaloIdVT_TrkIdT_v9   ; 
+   bool	isFired_HLT_Ele80_CaloIdVT_TrkIdT_v10  ;
+   bool	isFired_HLT_Ele80_CaloIdVT_GsfTrkIdT_v1;
+   bool	isFired_HLT_Ele80_CaloIdVT_GsfTrkIdT_v2;
+   bool isFired_HLT_PFHT650_v5;
+   bool isFired_HLT_PFHT650_v6;
+   bool isFired_HLT_PFHT650_v7;
+   bool isFired_HLT_PFHT650_v8;
+   bool isFired_HLT_PFHT650_v9;
+   bool isFired_HLT_PFNoPUHT650_v1;
+   bool isFired_HLT_PFNoPUHT650_v3;
+   bool isFired_HLT_PFNoPUHT650_v4;
+   bool isFired_HLT_PFJet320_v3;
+   bool isFired_HLT_PFJet320_v4;
+   bool isFired_HLT_PFJet320_v5;
+   bool isFired_HLT_PFJet320_v6;
+   bool isFired_HLT_PFJet320_v8;
+   bool isFired_HLT_PFJet320_v9;  
+              
+private:
+   
+};
+
+#endif // INPUTDATA_H

@@ -1,0 +1,84 @@
+#include "include/LumiWeight.h"
+
+#include <iostream>
+
+//==============================================================================================
+LumiWeight::LumiWeight( void ){
+
+}
+
+//==============================================================================================
+LumiWeight::~LumiWeight( void ){
+
+}
+
+//==============================================================================================
+double LumiWeight::getLumiWeight( TString sample ){
+
+   xSec_ = 1.;
+   genEvents_ = 1.;
+              
+   if( sample.Contains( "_WW_" ) ){
+      xSec_ = 57.1097;
+      genEvents_ = 10000431.;
+   }
+   else if( sample.Contains( "_WZ_" ) ){
+      xSec_ = 33.21;
+      genEvents_ = 10000283.;
+   }         
+   else if( sample.Contains( "_ZZ_" ) ){
+      xSec_ = 8.059;
+      genEvents_ = 9799908.;
+   }
+   else if( sample.Contains( "_T_t-channel_" ) ){
+      xSec_ = 56.4;
+      genEvents_ = 3758227.;
+   }
+   else if( sample.Contains( "_T_s-channel_" ) ){
+      xSec_ = 3.79;
+      genEvents_ = 259961.;
+   }         
+   else if( sample.Contains( "_T_tW-channel-DR_" ) ){
+      xSec_ = 11.1;
+      genEvents_ = 497658.;
+   }
+   else if( sample.Contains( "_Tbar_t-channel_" ) ){
+      xSec_ = 30.7;
+      genEvents_ = 1935072.;
+   }
+   else if( sample.Contains( "_Tbar_s-channel_" ) ){
+      xSec_ = 1.76;
+      genEvents_ = 139974.;
+   }         
+   else if( sample.Contains( "_Tbar_tW-channel-DR_" ) ){
+      xSec_ = 11.1;
+      genEvents_ = 493460.;
+   } 
+   else if( sample.Contains( "_TT_" ) ){
+      xSec_ = 225.197;
+      genEvents_ = 21675970.;
+   }    
+   else if( sample.Contains( "_WJetsToLNu_PtW-180_" ) ){
+      xSec_ = 23.5;
+      genEvents_ = 9739464.;
+   }
+   else if( sample.Contains( "_DYJetsToLL_PtZ-100_" ) ){
+      xSec_ = 32.9;
+      genEvents_ = 12511326.;
+   }
+   else if( sample.Contains( "_QCD_HT-250To500_" ) ){
+      xSec_ = 276000.;
+      genEvents_ = 27062078.;
+   }
+   else if( sample.Contains( "_QCD_HT-500To1000_" ) ){
+      xSec_ = 8426.;
+      genEvents_ = 30599292.;
+   }
+   else if( sample.Contains( "_QCD_HT-1000ToInf_" ) ){
+      xSec_ = 204.;
+      genEvents_ = 13843863.;
+   }
+    
+   return xSec_/genEvents_;
+      
+}

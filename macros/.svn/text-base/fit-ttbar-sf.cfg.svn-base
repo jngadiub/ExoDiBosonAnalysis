@@ -1,0 +1,9 @@
+[FITEXO]
+data = { 'mu':'ExoDiBosonAnalysis.SingleMuRun2012.root', 'ele':'ExoDiBosonAnalysis.SingleEleRun2012.root', 'ttbarmu':'ExoDiBosonAnalysis.SingleMuRun2012.root', 'ttbarele':'ExoDiBosonAnalysis.SingleEleRun2012.root'  }
+prefix = { 'mu':'../ttbarCP/mu_NR_LSB/', 'ele':'../ttbarCP/ele_NR_LSB/', 'ttbarmu':'../ttbarCP/mu_ttbarCR/', 'ttbarele':'../ttbarCP/ele_ttbarCR/' }
+filelist = { 'TTbar':'ExoDiBosonAnalysis.TTbar.root',
+             'Wjets':'ExoDiBosonAnalysis.WJetsPt180.root',
+	     'VV':'ExoDiBosonAnalysis.VV.root',
+	     'STop':'ExoDiBosonAnalysis.SingleTop.root',
+	     'Zjets':'ExoDiBosonAnalysis.DYPt100.root' }
+lumi = { 'mu': 19764., 'ele': 19705., 'ttbarmu': 19764., 'ttbarele': 19705. }

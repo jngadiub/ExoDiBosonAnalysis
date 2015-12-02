@@ -1,0 +1,117 @@
+#include "include/NtupleManager.h"
+#include "core/include/SCycleBase.h"
+
+////////////////////////////////////////////////////////////////////
+NtupleManager::NtupleManager( SCycleBase* theAnalysis ):theAnalysis_( theAnalysis )
+{
+
+}
+
+////////////////////////////////////////////////////////////////////
+NtupleManager::~NtupleManager( void ){
+
+}
+
+////////////////////////////////////////////////////////////////////
+void NtupleManager::ConnectVariables( std::string treeName  ){
+   
+   theAnalysis_->ConnectVariable( treeName.c_str(), "genParticle_pdgId"     , theData_.genParticle_pdgId      );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "genParticle_status"    , theData_.genParticle_status     );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "genParticle_pt"        , theData_.genParticle_pt	      );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "genParticle_mass"      , theData_.genParticle_mass       );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "genParticle_e"         , theData_.genParticle_e	      );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "genParticle_eta"       , theData_.genParticle_eta	      );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "genParticle_phi"       , theData_.genParticle_phi	      );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "genParticle_dau"       , theData_.genParticle_dau	      );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "genParticle_mother"    , theData_.genParticle_mother     );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "lheV_pt"               , theData_.lheV_pt                );
+   
+   theAnalysis_->ConnectVariable( treeName.c_str(), "nlep"		    , theData_.nlep		      );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "lep_e"		    , theData_.lep_e		      );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "lep_eta"		    , theData_.lep_eta		      );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "lep_pt"		    , theData_.lep_pt		      );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "lep_phi"		    , theData_.lep_phi		      );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "lep_type"		    , theData_.lep_type  	      );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "lep_isHEEP"            , theData_.lep_isHEEP             ); 
+   theAnalysis_->ConnectVariable( treeName.c_str(), "lep_trackIso"          , theData_.lep_trackIso           );        
+   theAnalysis_->ConnectVariable( treeName.c_str(), "lep_isHighPtMuon"      , theData_.lep_isHighPtMuon       );
+
+   theAnalysis_->ConnectVariable( treeName.c_str(), "njetsAK5"             , theData_.njetsAK5		    );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "jetAK5_e"		   , theData_.jetAK5_e		    );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "jetAK5_eta"	   , theData_.jetAK5_eta 	    );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "jetAK5_pt"		   , theData_.jetAK5_pt  	    );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "jetAK5_phi"	   , theData_.jetAK5_phi 	    );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "jetAK5_csv"	   , theData_.jetAK5_csv 	    );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "jetAK5_flavour"	   , theData_.jetAK5_flavor	    );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "jetAK5_IDLoose"	   , theData_.jetAK5_IDLoose	    );
+   
+   theAnalysis_->ConnectVariable( treeName.c_str(), "njetsCA8"             , theData_.njetsCA8		    );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "jetCA8_e"		   , theData_.jetCA8_e		    );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "jetCA8_mass"	   , theData_.jetCA8_mass           );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "jetCA8_eta"	   , theData_.jetCA8_eta 	    );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "jetCA8_pt"		   , theData_.jetCA8_pt  	    );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "jetCA8_phi"	   , theData_.jetCA8_phi 	    );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "jetCA8_csv"	   , theData_.jetCA8_csv 	    );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "jetCA8_cm"	           , theData_.jetCA8_cm	            );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "jetCA8_nm"	           , theData_.jetCA8_nm	            );
+   //theAnalysis_->ConnectVariable( treeName.c_str(), "jetCA8_nconstituents" , theData_.jetCA8_nconstituents  );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "jetCA8_tau1"	   , theData_.jetCA8_tau1	    );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "jetCA8_tau2"	   , theData_.jetCA8_tau2	    );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "jetCA8_tau3"	   , theData_.jetCA8_tau3	    );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "jetCA8_IDLoose"	   , theData_.jetCA8_IDLoose	    );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "jetCA8_flavour"	   , theData_.jetCA8_flavor	    );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "jetCA8_che"	   , theData_.jetCA8_che 	    );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "jetCA8_ne"	   , theData_.jetCA8_ne 	    );
+      
+   theAnalysis_->ConnectVariable( treeName.c_str(), "nsubjets"             , theData_.nsubjets	            );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "subjetCA8pruned_csv"  , theData_.subjetCA8pruned_csv   );  
+   theAnalysis_->ConnectVariable( treeName.c_str(), "subjetCA8pruned_pt"   , theData_.subjetCA8pruned_pt    );  
+   theAnalysis_->ConnectVariable( treeName.c_str(), "subjetCA8pruned_eta"  , theData_.subjetCA8pruned_eta   );  
+   theAnalysis_->ConnectVariable( treeName.c_str(), "subjetCA8pruned_phi"  , theData_.subjetCA8pruned_phi   );  
+   theAnalysis_->ConnectVariable( treeName.c_str(), "subjetCA8pruned_e"    , theData_.subjetCA8pruned_e	    );  
+   theAnalysis_->ConnectVariable( treeName.c_str(), "subjetCA8pruned_flavour", theData_.subjetCA8pruned_flavor);  
+
+   theAnalysis_->ConnectVariable( treeName.c_str(), "njetsCA8pruned"       , theData_.njetsCA8pruned	    );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "jetCA8pruned_e"	   , theData_.jetCA8pruned_e	    );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "jetCA8pruned_eta"	   , theData_.jetCA8pruned_eta	    );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "jetCA8pruned_pt"      , theData_.jetCA8pruned_pt	    );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "jetCA8pruned_phi"	   , theData_.jetCA8pruned_phi	    );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "jetCA8pruned_mass"	   , theData_.jetCA8pruned_mass	    );    
+   
+   theAnalysis_->ConnectVariable( treeName.c_str(), "MET_et"	   	   , theData_.MET_et	            );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "MET_phi"	   	   , theData_.MET_phi	            );
+   
+   theAnalysis_->ConnectVariable( treeName.c_str(), "nPuVtxTrue"           , theData_.nPUTrue               );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "bX"                   , theData_.bX                    );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "nPVs"                 , theData_.nPVs                  );
+   
+   theAnalysis_->ConnectVariable( treeName.c_str(), "EVENT_event"          , theData_.EVENT_event           );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "EVENT_run"            , theData_.EVENT_run             );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "EVENT_lumiBlock"      , theData_.EVENT_lumi            );
+
+   theAnalysis_->ConnectVariable( treeName.c_str(), "isFired_HLT_Mu40_eta2p1_v9" 	     , theData_.isFired_HLT_Mu40_eta2p1_v9              );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "isFired_HLT_Mu40_eta2p1_v10"	     , theData_.isFired_HLT_Mu40_eta2p1_v10             );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "isFired_HLT_Mu40_eta2p1_v11"	     , theData_.isFired_HLT_Mu40_eta2p1_v11             );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "isFired_HLT_Ele80_CaloIdVT_TrkIdT_v8"   , theData_.isFired_HLT_Ele80_CaloIdVT_TrkIdT_v8    );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "isFired_HLT_Ele80_CaloIdVT_TrkIdT_v9"   , theData_.isFired_HLT_Ele80_CaloIdVT_TrkIdT_v9    );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "isFired_HLT_Ele80_CaloIdVT_TrkIdT_v10"  , theData_.isFired_HLT_Ele80_CaloIdVT_TrkIdT_v10   );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "isFired_HLT_Ele80_CaloIdVT_GsfTrkIdT_v1", theData_.isFired_HLT_Ele80_CaloIdVT_GsfTrkIdT_v1 );
+   theAnalysis_->ConnectVariable( treeName.c_str(), "isFired_HLT_Ele80_CaloIdVT_GsfTrkIdT_v2", theData_.isFired_HLT_Ele80_CaloIdVT_GsfTrkIdT_v2 );
+
+   theAnalysis_->ConnectVariable( treeName.c_str(), "isFired_HLT_PFHT650_v5"		     , theData_.isFired_HLT_PFHT650_v5);
+   theAnalysis_->ConnectVariable( treeName.c_str(), "isFired_HLT_PFHT650_v6"		     , theData_.isFired_HLT_PFHT650_v6);
+   theAnalysis_->ConnectVariable( treeName.c_str(), "isFired_HLT_PFHT650_v7"		     , theData_.isFired_HLT_PFHT650_v7);
+   theAnalysis_->ConnectVariable( treeName.c_str(), "isFired_HLT_PFHT650_v8"		     , theData_.isFired_HLT_PFHT650_v8);
+   theAnalysis_->ConnectVariable( treeName.c_str(), "isFired_HLT_PFHT650_v9"		     , theData_.isFired_HLT_PFHT650_v9);
+   theAnalysis_->ConnectVariable( treeName.c_str(), "isFired_HLT_PFNoPUHT650_v1"             , theData_.isFired_HLT_PFNoPUHT650_v1);
+   theAnalysis_->ConnectVariable( treeName.c_str(), "isFired_HLT_PFNoPUHT650_v3"             , theData_.isFired_HLT_PFNoPUHT650_v3);
+   theAnalysis_->ConnectVariable( treeName.c_str(), "isFired_HLT_PFNoPUHT650_v4"             , theData_.isFired_HLT_PFNoPUHT650_v4);
+   theAnalysis_->ConnectVariable( treeName.c_str(), "isFired_HLT_PFJet320_v3"		     , theData_.isFired_HLT_PFJet320_v3);
+   theAnalysis_->ConnectVariable( treeName.c_str(), "isFired_HLT_PFJet320_v4"		     , theData_.isFired_HLT_PFJet320_v4);
+   theAnalysis_->ConnectVariable( treeName.c_str(), "isFired_HLT_PFJet320_v5"		     , theData_.isFired_HLT_PFJet320_v5);
+   theAnalysis_->ConnectVariable( treeName.c_str(), "isFired_HLT_PFJet320_v6"		     , theData_.isFired_HLT_PFJet320_v6);
+   theAnalysis_->ConnectVariable( treeName.c_str(), "isFired_HLT_PFJet320_v8"		     , theData_.isFired_HLT_PFJet320_v8);
+   theAnalysis_->ConnectVariable( treeName.c_str(), "isFired_HLT_PFJet320_v9"   	     , theData_.isFired_HLT_PFJet320_v9);  
+
+
+}

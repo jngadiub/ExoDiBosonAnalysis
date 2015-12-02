@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE JobConfiguration PUBLIC "" "/shome/jngadiub/EXOVVAnalysisRunII/SFrame-04-00-01/user/config/JobConfig.dtd">
+<JobConfiguration JobName="exovvJob" OutputLevel="INFO">
+  <Library Name="libExoDiBosonAnalysis" />
+
+  <Package Name="SFrameCore.par" />
+  <Package Name="ExoDiBosonAnalysis.par" />
+
+  <Cycle Name="ExoDiBosonAnalysis" OutputDirectory="../AnalysisOutput/JMRsys/" PostFix="" ProofServer="lite" ProofWorkDir="" RunMode="LOCAL" TargetLumi="1.0">
+
+    <InputData Lumi="0.0" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Type="BulkGraviton" Version="M-800.mu">
+      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/BulkGravToWWToWlepWhad_narrow_M_800/EXOVVTree_BulkGravToWWToWlepWhad_narrow_M_800_v2_1.root" Lumi="1.0" />
+      <InputTree Name="ntuplizer/tree" />
+      <OutputTree Name="tree" />
+    </InputData>
+    
+    <InputData Lumi="0.0" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Type="BulkGraviton" Version="M-1200.mu">
+      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/BulkGravToWWToWlepWhad_narrow_M_1200/EXOVVTree_BulkGravToWWToWlepWhad_narrow_M_1200_v2_1.root" Lumi="1.0" />
+      <InputTree Name="ntuplizer/tree" />
+      <OutputTree Name="tree" />
+    </InputData>
+    <InputData Lumi="0.0" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Type="BulkGraviton" Version="M-1400.mu">
+      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/BulkGravToWWToWlepWhad_narrow_M_1400/EXOVVTree_BulkGravToWWToWlepWhad_narrow_M_1400_v2_1.root" Lumi="1.0" />
+      <InputTree Name="ntuplizer/tree" />
+      <OutputTree Name="tree" />
+    </InputData>
+    <InputData Lumi="0.0" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Type="BulkGraviton" Version="M-1600.mu">
+      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/BulkGravToWWToWlepWhad_narrow_M_1600/EXOVVTree_BulkGravToWWToWlepWhad_narrow_M_1600_v2_1.root" Lumi="1.0" />
+      <InputTree Name="ntuplizer/tree" />
+      <OutputTree Name="tree" />
+    </InputData>
+    <InputData Lumi="0.0" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Type="BulkGraviton" Version="M-1800.mu">
+      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/BulkGravToWWToWlepWhad_narrow_M_1800/EXOVVTree_BulkGravToWWToWlepWhad_narrow_M_1800_v2_1.root" Lumi="1.0" />
+      <InputTree Name="ntuplizer/tree" />
+      <OutputTree Name="tree" />
+    </InputData>
+    <InputData Lumi="0.0" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Type="BulkGraviton" Version="M-2000.mu">
+      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/BulkGravToWWToWlepWhad_narrow_M_2000/EXOVVTree_BulkGravToWWToWlepWhad_narrow_M_2000_v2_1.root" Lumi="1.0" />
+      <InputTree Name="ntuplizer/tree" />
+      <OutputTree Name="tree" />
+    </InputData>
+    <InputData Lumi="0.0" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Type="BulkGraviton" Version="M-2500.mu">
+      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/BulkGravToWWToWlepWhad_narrow_M_2500/EXOVVTree_BulkGravToWWToWlepWhad_narrow_M_2500_v2_1.root" Lumi="1.0" />
+      <InputTree Name="ntuplizer/tree" />
+      <OutputTree Name="tree" />
+    </InputData>
+    <InputData Lumi="0.0" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Type="BulkGraviton" Version="M-3000.mu">
+      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/BulkGravToWWToWlepWhad_narrow_M_3000/EXOVVTree_BulkGravToWWToWlepWhad_narrow_M_3000_v2_1.root" Lumi="1.0" />
+      <InputTree Name="ntuplizer/tree" />
+      <OutputTree Name="tree" />
+    </InputData>
+    <InputData Lumi="0.0" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Type="BulkGraviton" Version="M-3500.mu">
+      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/BulkGravToWWToWlepWhad_narrow_M_3500/EXOVVTree_BulkGravToWWToWlepWhad_narrow_M_3500_v2_1.root" Lumi="1.0" />
+      <InputTree Name="ntuplizer/tree" />
+      <OutputTree Name="tree" />
+    </InputData>
+    <InputData Lumi="0.0" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Type="BulkGraviton" Version="M-4000.mu">
+      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/BulkGravToWWToWlepWhad_narrow_M_4000/EXOVVTree_BulkGravToWWToWlepWhad_narrow_M_4000_v2_1.root" Lumi="1.0" />
+      <InputTree Name="ntuplizer/tree" />
+      <OutputTree Name="tree" />
+    </InputData>
+    <InputData Lumi="0.0" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Type="BulkGraviton" Version="M-4500.mu">
+      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/BulkGravToWWToWlepWhad_narrow_M_4500/EXOVVTree_BulkGravToWWToWlepWhad_narrow_M_4500_v2_1.root" Lumi="1.0" />
+      <InputTree Name="ntuplizer/tree" />
+      <OutputTree Name="tree" />
+    </InputData>
+                                
+    <UserConfig>
+    
+       
+      <Item Name="InputTreeName" Value="tree" />
+      <Item Name="OutputTreeName" Value="tree" />
+      <Item Name="isSignal" Value="true" />
+      <Item Name="runOnMC" Value="true" />
+      <Item Name="GenFilter" Value="false" />
+      <Item Name="Flavour" Value="bb" />
+      <Item Name="Channel" Value="muon" />
+      <Item Name="Trigger" Value="true" />
+      <Item Name="Synch" Value="false" />
+      <Item Name="applyFilters" Value="true" />
+
+      
+      <Item Name="LeptPtCut" Value="53" />
+      <Item Name="LeptEtaCut" Value="2.1" />
+      <Item Name="AleptPtCut" Value="20" />
+      <Item Name="AleptEtaCut" Value="2.4" />
+      <Item Name="METCut" Value="40" />
+      <Item Name="WptCut" Value="200" />
+      
+      
+      <Item Name="JetPtCutLoose" Value="80" />
+      <Item Name="JetPtCutTight" Value="200" />
+      <Item Name="JetEtaCut" Value="2.4" />    
+      <Item Name="Tau21Cut" Value="LP" /> 
+      <Item Name="SubjetsBtagWP" Value="CSVL" /> 
+      <Item Name="NsubjBTag" Value="-1" /> 
+            
+        
+      <Item Name="nAJetCut" Value="0" /> 
+      <Item Name="BtagVetoWP" Value="CSVM" />
+
+              
+      <Item Name="AngularCuts" Value="true" /> 
+
+      
+      <Item Name="TopMassCut" Value="false" />
+      <Item Name="leptTopMassLow" Value="80." />
+      <Item Name="leptTopMassHigh" Value="210." />
+      <Item Name="hadrTopMassLow" Value="100." />
+      <Item Name="hadrTopMassHigh" Value="230." />
+
+      
+      <Item Name="JetMassAlgo" Value="pruning" /> 
+      <Item Name="VetoSR" Value="false" />    
+      <Item Name="mLow" Value="85" /> 
+      <Item Name="mHigh" Value="105" /> 
+      
+      
+      <Item Name="WWMass" Value="0" /> 
+
+      
+      <Item Name="xSec" Value="1." />
+      <Item Name="genEvents" Value="1." />
+      <Item Name="Lumi" Value="1." />
+      <Item Name="PUdata" Value="/shome/jngadiub/EXOVVAnalysisRunII/ExoDiBosonAnalysis/data/biasXsec_72000.root" />
+      <Item Name="BTagEff4vetoData" Value="data/TT_CT10_TuneZ2star_8TeV-powheg-tauola_AK5PF_CSVM_bTaggingEfficiencyMap.root" />
+      <Item Name="BTagEff4fatjetData" Value="data/BtagEfficienciesMap_fatjets_Wp.root" />
+      <Item Name="BTagEff4subjetData" Value="data/btag-efficiency-maps.root" />
+            
+      
+      <Item Name="BtagSFSysUpVeto" Value="false" />
+      <Item Name="BtagSFSysDownVeto" Value="false" />
+      <Item Name="BtagSFSysUp" Value="false" />
+      <Item Name="BtagSFSysDown" Value="false" />
+      <Item Name="ScaleMuonUpDown" Value="0" />
+      <Item Name="ScalePrunedMassResidual" Value="0" />
+      <Item Name="ScalePrunedMassUp" Value="false" />
+      <Item Name="ScalePrunedMassDown" Value="false" />
+      <Item Name="JetMassResolutionUpDown" Value="1" />
+      <Item Name="JetEnergyResolutionUpDown" Value="0" />
+      <Item Name="ScaleJESUp" Value="false" />
+      <Item Name="ScaleJESDown" Value="false" />
+      <Item Name="JMRSigmaMCPTData" Value="data/sigmaMC_pT_JMR.root" />
+      <Item Name="JERSigmaMCPTData" Value="data/sigmaMC_pT_JER.root" />
+            
+    </UserConfig>
+  </Cycle>
+</JobConfiguration>

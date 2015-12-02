@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE JobConfiguration PUBLIC "" "/shome/jngadiub/EXOVVAnalysisRunII/SFrame-04-00-01/user/config/JobConfig.dtd">
+<JobConfiguration JobName="exovvJob" OutputLevel="INFO">
+  <Library Name="libExoDiBosonAnalysis" />
+
+  <Package Name="SFrameCore.par" />
+  <Package Name="ExoDiBosonAnalysis.par" />
+
+  <Cycle Name="ExoDiBosonAnalysis" RunMode="LOCAL" UseTreeCache="True" TreeCacheSize="30000000" TreeCacheLearnEntries="10" ProofServer="lite" ProofWorkDir="" OutputDirectory="./" PostFix="" TargetLumi="1.0">
+    <InputData Lumi="0.0" Type="test" Version="test" NEventsMax="-1" NEventsSkip="0" SkipValid="True" >
+         <In FileName="dcap://t3se01.psi.ch:22125//pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15/WJetsToLNu_HT-400To600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/EXOVVTree_WJetsToLNu_HT-400To600_10.root" Lumi="1.0"/>
+      <InputTree Name="ntuplizer/tree" />
+      <OutputTree Name="tree" />
+    </InputData>
+
+    <UserConfig>
+      <Item Name="runOnMC" Value="true" />
+      <Item Name="Trigger" Value="true" />
+      <Item Name="Lumi" Value="1." />
+      <Item Name="VetoSR" Value="true" />
+      <Item Name="InputTreeName" Value="tree" />
+      <Item Name="OutputTreeName" Value="tree" />
+      <Item Name="isSignal" Value="false" />
+      <Item Name="GenFilter" Value="false" />
+      <Item Name="Flavour" Value="" />
+      <Item Name="Channel" Value="muon" />
+      <Item Name="Synch" Value="false" />
+      <Item Name="applyFilters" Value="true" />
+      <Item Name="LeptPtCut" Value="50" />
+      <Item Name="LeptEtaCut" Value="2.1" />
+      <Item Name="AleptPtCut" Value="20" />
+      <Item Name="AleptEtaCut" Value="2.4" />
+      <Item Name="METCut" Value="40" />
+      <Item Name="WptCut" Value="200" />
+      <Item Name="JetPtCutLoose" Value="80" />
+      <Item Name="JetPtCutTight" Value="200" />
+      <Item Name="JetEtaCut" Value="2.4" />
+      <Item Name="Tau21Cut" Value="None" />
+      <Item Name="SubjetsBtagWP" Value="CSVL" />
+      <Item Name="NsubjBTag" Value="-1" />
+      <Item Name="nAJetCut" Value="0" />
+      <Item Name="BtagVetoWP" Value="CSVM" />
+      <Item Name="AngularCuts" Value="true" />
+      <Item Name="TopMassCut" Value="false" />
+      <Item Name="leptTopMassLow" Value="120." />
+      <Item Name="leptTopMassHigh" Value="240." />
+      <Item Name="hadrTopMassLow" Value="160." />
+      <Item Name="hadrTopMassHigh" Value="280." />
+      <Item Name="JetMassAlgo" Value="pruning" />
+      <Item Name="mLow" Value="40." />
+      <Item Name="mHigh" Value="150." />
+      <Item Name="WWMass" Value="-1" />
+      <Item Name="xSec" Value="1." />
+      <Item Name="genEvents" Value="1." />
+      <Item Name="PUdata" Value="/shome/jngadiub/EXOVVAnalysisRunII/ExoDiBosonAnalysis/data/DataPUProfile_Run2015BCD.root" />
+      <Item Name="BTagEff4vetoData" Value="/shome/jngadiub/EXOVVAnalysis/ExoDiBosonAnalysis/data/TT_CT10_TuneZ2star_8TeV-powheg-tauola_AK5PF_CSVM_bTaggingEfficiencyMap.root" />
+      <Item Name="BTagEff4fatjetData" Value="/shome/jngadiub/EXOVVAnalysis/ExoDiBosonAnalysis/data/BtagEfficienciesMap_fatjets_Wp.root" />
+      <Item Name="BTagEff4subjetData" Value="/shome/jngadiub/EXOVVAnalysis/ExoDiBosonAnalysis/data/btag-efficiency-maps.root" />
+      <Item Name="BtagSFSysUpVeto" Value="false" />
+      <Item Name="BtagSFSysDownVeto" Value="false" />
+      <Item Name="BtagSFSysUp" Value="false" />
+      <Item Name="BtagSFSysDown" Value="false" />
+      <Item Name="ScaleMuonUpDown" Value="0" />
+      <Item Name="ScalePrunedMass" Value="0" />
+      <Item Name="ScalePrunedMassUp" Value="false" />
+      <Item Name="ScalePrunedMassDown" Value="false" />
+
+    </UserConfig>
+  </Cycle>
+</JobConfiguration>
