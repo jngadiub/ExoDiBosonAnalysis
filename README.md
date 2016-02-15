@@ -15,15 +15,15 @@ exo-vv analyzer
    cd ../
 ```  
 3) create the ExoDiBosonAnalysis analysis package in SFrame otherwise SFrame does not know that it exists
-
+```
    sframe_new_package.sh ExoDiBosonAnalysis
    cd ExoDiBosonAnalysis
    sframe_create_cycle.py -n ExoDiBosonAnalysis
-
+```
 4) fork the ExoDiBosonAnalysis repository into your git account
   
 5) check out and compile ExoDiBosonAnalysis code
-  
+```  
    export GITUSER=`git config user.github`
    echo "Your github username has been set to \"$GITUSER\""
    git clone git@github.com:${GITUSER}/ExoDiBosonAnalysis.git ExoDiBosonAnalysis_tmp
@@ -37,7 +37,8 @@ exo-vv analyzer
    
    cd ../ExoDiBosonAnalysis
    make clean && make
-  
+```  
 6) run the ExoDiBosonAnalysis code
-
+```
    sframe_main config/BulkGraviton_mu.xml  
+```
