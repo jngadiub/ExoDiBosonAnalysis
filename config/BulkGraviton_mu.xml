@@ -9,13 +9,13 @@
 
   <Cycle Name="ExoDiBosonAnalysis" RunMode="LOCAL" ProofServer="lite" ProofWorkDir="" OutputDirectory="../AnalysisOutput/" PostFix="" TargetLumi="1.0">
 
-    <!--InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-800.mu" >
+    <InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-800.mu" >
       <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/BulkGravToWWToWlepWhad_narrow_M_800/EXOVVTree_BulkGravToWWToWlepWhad_narrow_M_800_1.root" Lumi="1.0"/>
       <InputTree Name="ntuplizer/tree" />
       <OutputTree Name="tree" />
     </InputData>
     <InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-1000.mu" >
-      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15/BulkGravToWWToWlepWhad_narrow_M_1000/EXOVVTree_BulkGravToWWToWlepWhad_narrow_M_1000_1.root" Lumi="1.0"/>
+      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/BulkGravToWWToWlepWhad_narrow_M_1000/EXOVVTree_BulkGravToWWToWlepWhad_narrow_M_1000_1.root" Lumi="1.0"/>
       <InputTree Name="ntuplizer/tree" />
       <OutputTree Name="tree" />
     </InputData>
@@ -38,13 +38,13 @@
       <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/BulkGravToWWToWlepWhad_narrow_M_1800/EXOVVTree_BulkGravToWWToWlepWhad_narrow_M_1800_1.root" Lumi="1.0"/>
       <InputTree Name="ntuplizer/tree" />
       <OutputTree Name="tree" />
-    </InputData-->
+    </InputData>
     <InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-2000.mu" >
       <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/BulkGravToWWToWlepWhad_narrow_M_2000/EXOVVTree_BulkGravToWWToWlepWhad_narrow_M_2000_1.root" Lumi="1.0"/>
       <InputTree Name="ntuplizer/tree" />
       <OutputTree Name="tree" />
     </InputData>
-    <!--InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-2500.mu" >
+    <InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-2500.mu" >
       <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/BulkGravToWWToWlepWhad_narrow_M_2500/EXOVVTree_BulkGravToWWToWlepWhad_narrow_M_2500_1.root" Lumi="1.0"/>
       <InputTree Name="ntuplizer/tree" />
       <OutputTree Name="tree" />
@@ -68,7 +68,7 @@
       <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/BulkGravToWWToWlepWhad_narrow_M_4500/EXOVVTree_BulkGravToWWToWlepWhad_narrow_M_4500_1.root" Lumi="1.0"/>
       <InputTree Name="ntuplizer/tree" />
       <OutputTree Name="tree" />
-    </InputData-->
+    </InputData>
                                 
     <UserConfig>
     
@@ -105,7 +105,7 @@
       <Item Name="BtagVetoWP" Value="CSVM" />
 
       <!--angular cuts-->        
-      <Item Name="AngularCuts" Value="true" /> <!--false-->
+      <Item Name="AngularCuts" Value="false" /> <!--false-->
 
       <!--top mass veto-->
       <Item Name="TopMassCut" Value="false"/>
@@ -117,8 +117,8 @@
       <!--pruned mass-->
       <Item Name="JetMassAlgo" Value="pruning" /> <!--None-->
       <Item Name="VetoSR" Value="false"/>    
-      <Item Name="mLow" Value="65." /> <!--40-->
-      <Item Name="mHigh" Value="105." /> <!--130-->
+      <Item Name="mLow" Value="40." /> <!--40-->
+      <Item Name="mHigh" Value="150." /> <!--130-->
       
       <!--WH mass window-->
       <Item Name="WWMass"     Value="-1"/> <!--if Value="-1" no window is applied otherwise put the mass of the resonance and the 15% window is automatically taken into account-->

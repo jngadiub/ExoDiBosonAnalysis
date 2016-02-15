@@ -393,6 +393,57 @@ double LumiWeight::getLumiWeight( TString sample ){
       xSec_ = 1.;
       genEvents_ = 50000.;   
    } 
+   
+   
+   
+   else if( sample.Contains( "ZprimeToWWToWlepWhad" ) && sample.Contains( "M-800" ) ){ //ok
+      xSec_ = 1.;
+      genEvents_ = 49200.;   
+   } 
+   else if( sample.Contains( "ZprimeToWWToWlepWhad" ) && sample.Contains( "M-1000" ) ){ //ok
+      xSec_ = 1.;
+      genEvents_ = 50000.;   
+   }   
+   else if( sample.Contains( "ZprimeToWWToWlepWhad" ) && sample.Contains( "M-1200" ) ){ //ok
+      xSec_ = 1.;
+      genEvents_ = 49200.;   
+   }      
+   else if( sample.Contains( "ZprimeToWWToWlepWhad" ) && sample.Contains( "M-1400" ) ){ //ok
+      xSec_ = 1.;
+      genEvents_ = 50000.;   
+   }    
+   //else if( sample.Contains( "ZprimeToWWToWlepWhad" ) && sample.Contains( "M-1600" ) ){ //ok
+   //   xSec_ = 1.;
+   //   genEvents_ = ?;   
+   //}  
+   else if( sample.Contains( "ZprimeToWWToWlepWhad" ) && sample.Contains( "M-1800" ) ){ //ok
+      xSec_ = 1.;
+      genEvents_ = 50000.;   
+   }
+   else if( sample.Contains( "ZprimeToWWToWlepWhad" ) && sample.Contains( "M-2000" ) ){ //ok
+      xSec_ = 1.;
+      genEvents_ = 50000.;   
+   }
+   else if( sample.Contains( "ZprimeToWWToWlepWhad" ) && sample.Contains( "M-2500" ) ){ //ok
+      xSec_ = 1.;
+      genEvents_ = 46800.;   
+   }
+   else if( sample.Contains( "ZprimeToWWToWlepWhad" ) && sample.Contains( "M-3000" ) ){ //ok
+      xSec_ = 1.;
+      genEvents_ = 49600.;   
+   }
+   else if( sample.Contains( "ZprimeToWWToWlepWhad" ) && sample.Contains( "M-3500" ) ){ //ok
+      xSec_ = 1.;
+      genEvents_ = 49200.;   
+   }
+   else if( sample.Contains( "ZprimeToWWToWlepWhad" ) && sample.Contains( "M-4000" ) ){ //ok
+      xSec_ = 1.;
+      genEvents_ = 49200.;   
+   }
+   else if( sample.Contains( "ZprimeToWWToWlepWhad" ) && sample.Contains( "M-4500" ) ){ //ok
+      xSec_ = 1.;
+      genEvents_ = 50000.;   
+   }
    return xSec_/genEvents_;
       
 }

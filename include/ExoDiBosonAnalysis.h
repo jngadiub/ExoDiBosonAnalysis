@@ -47,9 +47,12 @@ public:
    InputData& getData             ( void ){ return data_; }
    void setNtupleManager          ( NtupleManager* ntupleManager ){ theNtupleManager_ = ntupleManager; }
    void printCutFlow              ( void );
+   void printDijetCutFlow         ( void );
    bool runOnMC                   ( void ){return runOnMC_;}
 
    void fillHistos                ( void );
+   void fillTree                  ( void );
+   void fillDijetTree             ( void );
    
    double getMuonScale            ( double oldpt );
    double getPrunedMassScale      ( double prunedmass, double corrUp, double corrDown, double corr, double pt );
@@ -68,6 +71,7 @@ public:
    bool findMETCandidateForSys    ( void );
    bool findWCandidate            ( void );
    bool findJetCandidate          ( void );
+   bool findJetCandidates         ( void );
    void findExtraJets             ( void );
    void findTopCandidate          ( void );
    void findExoCandidate          ( void );   
@@ -200,16 +204,21 @@ private:
    float  btagvetow    ;
    float  htagw        ;  
    int    channel      ;
+   int    lep          ;
 
    float  MWW              ;
    float  MWWmethod2       ;
    float  jet_mass         ;
    float  jet_mass_pruned  ;
+   float  jet1_mass_pruned ;
+   float  jet2_mass_pruned ;
    float  jet_mass_softdrop; 
    float  jet_pt           ; 
    float  jet_eta          ; 
    float  jet_phi          ; 
    float  jet_tau2tau1     ;
+   float  jet1_tau2tau1    ;
+   float  jet2_tau2tau1    ;
    float  l_pt             ; 
    float  l_eta            ; 
    float  l_phi            ; 
@@ -299,7 +308,10 @@ private:
    int    nPassedMETFiltersAll_;
    int    nPassedTrkFiltersAll_;
    int    nPassedGoodPVFilter_;
-      
+   //dijet
+   int    nPassedJetsDEta_;
+   int    nPassedFoundJets_;
+   int    nPassedMjj_;      
    /* for synch */
    int run;
    int event;

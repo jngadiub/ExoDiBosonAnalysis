@@ -7,69 +7,69 @@
   <Package Name="SFrameCore.par" />
   <Package Name="ExoDiBosonAnalysis.par" />
 
-  <Cycle Name="ExoDiBosonAnalysis" OutputDirectory="../AnalysisOutput/" PostFix="" ProofServer="lite" ProofWorkDir="" RunMode="LOCAL" TargetLumi="1.0">
+  <Cycle Name="ExoDiBosonAnalysis" RunMode="LOCAL" ProofServer="lite" ProofWorkDir="" OutputDirectory="../AnalysisOutput/" PostFix="" TargetLumi="1.0">
 
-    <InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-800.el" >
+    <!--InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-800.mu" >
       <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/BulkGravToWWToWlepWhad_narrow_M_800/EXOVVTree_BulkGravToWWToWlepWhad_narrow_M_800_1.root" Lumi="1.0"/>
       <InputTree Name="ntuplizer/tree" />
       <OutputTree Name="tree" />
     </InputData>
-    <InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-1000.el" >
+    <InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-1000.mu" >
       <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15/BulkGravToWWToWlepWhad_narrow_M_1000/EXOVVTree_BulkGravToWWToWlepWhad_narrow_M_1000_1.root" Lumi="1.0"/>
       <InputTree Name="ntuplizer/tree" />
       <OutputTree Name="tree" />
     </InputData>
-    <InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-1200.el" >
+    <InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-1200.mu" >
       <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/BulkGravToWWToWlepWhad_narrow_M_1200/EXOVVTree_BulkGravToWWToWlepWhad_narrow_M_1200_1.root" Lumi="1.0"/>
       <InputTree Name="ntuplizer/tree" />
       <OutputTree Name="tree" />
     </InputData>
-    <InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-1400.el" >
+    <InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-1400.mu" >
       <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/BulkGravToWWToWlepWhad_narrow_M_1400/EXOVVTree_BulkGravToWWToWlepWhad_narrow_M_1400_1.root" Lumi="1.0"/>
       <InputTree Name="ntuplizer/tree" />
       <OutputTree Name="tree" />
     </InputData>
-    <InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-1600.el" >
+    <InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-1600.mu" >
       <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/BulkGravToWWToWlepWhad_narrow_M_1600/EXOVVTree_BulkGravToWWToWlepWhad_narrow_M_1600_1.root" Lumi="1.0"/>
       <InputTree Name="ntuplizer/tree" />
       <OutputTree Name="tree" />
     </InputData>
-    <InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-1800.el" >
+    <InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-1800.mu" >
       <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/BulkGravToWWToWlepWhad_narrow_M_1800/EXOVVTree_BulkGravToWWToWlepWhad_narrow_M_1800_1.root" Lumi="1.0"/>
       <InputTree Name="ntuplizer/tree" />
       <OutputTree Name="tree" />
-    </InputData>
-    <InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-2000.el" >
-      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/BulkGravToWWToWlepWhad_narrow_M_2000/EXOVVTree_BulkGravToWWToWlepWhad_narrow_M_2000_1.root" Lumi="1.0"/>
+    </InputData-->
+    <InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-2000.mu" >
+      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15/Signal/EXOVVTree_WprimeToWZToWhadZhad_narrow_M-2000_13TeV-madgraph_1.root" Lumi="1.0"/>
       <InputTree Name="ntuplizer/tree" />
       <OutputTree Name="tree" />
     </InputData>
-    <InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-2500.el" >
+    <!--InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-2500.mu" >
       <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/BulkGravToWWToWlepWhad_narrow_M_2500/EXOVVTree_BulkGravToWWToWlepWhad_narrow_M_2500_1.root" Lumi="1.0"/>
       <InputTree Name="ntuplizer/tree" />
       <OutputTree Name="tree" />
     </InputData>
-    <InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-3000.el" >
+    <InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-3000.mu" >
       <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/BulkGravToWWToWlepWhad_narrow_M_3000/EXOVVTree_BulkGravToWWToWlepWhad_narrow_M_3000_1.root" Lumi="1.0"/>
       <InputTree Name="ntuplizer/tree" />
       <OutputTree Name="tree" />
     </InputData>
-    <InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-3500.el" >
+    <InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-3500.mu" >
       <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/BulkGravToWWToWlepWhad_narrow_M_3500/EXOVVTree_BulkGravToWWToWlepWhad_narrow_M_3500_1.root" Lumi="1.0"/>
       <InputTree Name="ntuplizer/tree" />
       <OutputTree Name="tree" />
     </InputData>
-    <InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-4000.el" >
+    <InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-4000.mu" >
       <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/BulkGravToWWToWlepWhad_narrow_M_4000/EXOVVTree_BulkGravToWWToWlepWhad_narrow_M_4000_1.root" Lumi="1.0"/>
       <InputTree Name="ntuplizer/tree" />
       <OutputTree Name="tree" />
     </InputData>
-    <InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-4500.el" >
+    <InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-4500.mu" >
       <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/BulkGravToWWToWlepWhad_narrow_M_4500/EXOVVTree_BulkGravToWWToWlepWhad_narrow_M_4500_1.root" Lumi="1.0"/>
       <InputTree Name="ntuplizer/tree" />
       <OutputTree Name="tree" />
-    </InputData>
-
+    </InputData-->
+                                
     <UserConfig>
     
       <!--general settings--> 
@@ -79,17 +79,17 @@
       <Item Name="runOnMC" Value="true" />
       <Item Name="GenFilter" Value="false" />
       <Item Name="Flavour" Value="bb" />
-      <Item Name="Channel" Value="electron" />
+      <Item Name="Channel" Value="dijet" />
       <Item Name="Trigger" Value="true" />
       <Item Name="Synch" Value="false" />
-      <Item Name="applyFilters" Value="true" />
+      <Item Name="applyFilters" Value="false" />
 
       <!--leptonic selections-->
-      <Item Name="LeptPtCut" Value="120" />
-      <Item Name="LeptEtaCut" Value="2.5" />
-      <Item Name="AleptPtCut" Value="35" />
-      <Item Name="AleptEtaCut" Value="2.5" />
-      <Item Name="METCut" Value="80" />
+      <Item Name="LeptPtCut" Value="30" />
+      <Item Name="LeptEtaCut" Value="2.1" />
+      <Item Name="AleptPtCut" Value="20" />
+      <Item Name="AleptEtaCut" Value="2.4" />
+      <Item Name="METCut" Value="40" />
       <Item Name="WptCut" Value="200" />
       
       <!--jet selections-->
@@ -105,7 +105,7 @@
       <Item Name="BtagVetoWP" Value="CSVM" />
 
       <!--angular cuts-->        
-      <Item Name="AngularCuts" Value="false" /> <!--false-->
+      <Item Name="AngularCuts" Value="true" /> <!--false-->
 
       <!--top mass veto-->
       <Item Name="TopMassCut" Value="false"/>
@@ -115,10 +115,10 @@
       <Item Name="hadrTopMassHigh" Value="230."/>
 
       <!--pruned mass-->
-      <Item Name="JetMassAlgo" Value="None" /> <!--None-->
+      <Item Name="JetMassAlgo" Value="pruning" /> <!--None-->
       <Item Name="VetoSR" Value="false"/>    
-      <Item Name="mLow" Value="40." /> <!--40-->
-      <Item Name="mHigh" Value="150." /> <!--130-->
+      <Item Name="mLow" Value="65." /> <!--40-->
+      <Item Name="mHigh" Value="105." /> <!--130-->
       
       <!--WH mass window-->
       <Item Name="WWMass"     Value="-1"/> <!--if Value="-1" no window is applied otherwise put the mass of the resonance and the 15% window is automatically taken into account-->
@@ -148,7 +148,7 @@
       <Item Name="JMRSigmaMCPTData" Value="data/sigmaMC_pT_JMR.root" />
       <Item Name="JERSigmaMCPTData" Value="data/sigmaMC_pT_JER.root" />
       <Item Name="JSONfile" Value="data/GoldenJSON_1p3.txt" />
-      
+            
     </UserConfig>
   </Cycle>
 </JobConfiguration>

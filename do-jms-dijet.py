@@ -1,4 +1,4 @@
-#python do-jms.py -c mu -S -s BulkGraviton
+#python do-jms-dijet.py -S -s Wprime
 import xml.etree.ElementTree as ET
 import os,commands
 import sys
@@ -9,7 +9,6 @@ from ROOT import *
 
 argv = sys.argv
 parser = OptionParser()
-parser.add_option('-c', '--channel',action="store",type="string",dest="channel",default="el")
 parser.add_option("-S", "--syst", dest="syst", default=False, action="store_true",help="do systematics")
 parser.add_option('-s', '--signal',action="store",type="string",dest="signal",default="Wprime")
 (opts, args) = parser.parse_args(argv)
@@ -26,20 +25,18 @@ status,ls_la = commands.getstatusoutput( 'ls -l JMSDown' )
 if status:																				      
    os.system('mkdir JMSDown')
 
-masses = [800,1000,1200,1400,1600,1800,2000,2500,3000,3500,4000,4500]
-if opts.signal == "Zprime":       
- masses = [800,1000,1200,1400,1800,2000,2500,3000,3500,4000,4500]
+masses = [1000,1200,1400,1600,1800,2000,2500,3000,3500,4000,4500]
 
 if opts.syst:														 
 
  # get muon channel xml config file and parse																       
- xmlfile = 'config/%s_%s_JMSsys.xml' %(opts.signal,opts.channel)															       
+ xmlfile = 'config/Dijet_%s_JMSsys.xml' %(opts.signal)														       
 
  tree = ET.parse(xmlfile)																		       
  root = tree.getroot()  																		       
 
  ############### do central value ####################																		                   
- status,ls_la = commands.getstatusoutput( 'ls -l centralValueJMS/')													       
+ status,ls_la = commands.getstatusoutput( 'ls -l centralValueJMS/' )													       
  if status:																				       
     os.system('mkdir centralValueJMS/') 																	       
 
@@ -50,7 +47,7 @@ if opts.syst:
     if i.get('Name') == 'ScalePrunedMassDown':		    
        i.set('Value','false')
     if i.get('Name') == 'ScalePrunedMassResidual':		    
-       i.set('Value','-2')
+       i.set('Value','0')
     if i.get('Name') == 'JetMassResolutionUpDown':		    
        i.set('Value','0')
     if i.get('Name') == 'JetEnergyResolutionUpDown':		    
@@ -58,23 +55,23 @@ if opts.syst:
     if i.get('Name') == 'ScaleJMSUp':		    
        i.set('Value','false')
     if i.get('Name') == 'ScaleJMSDown':		    
-       i.set('Value','false')                               
+       i.set('Value','false')                            
                              																					    
- with open('config/syst/docentralValueJMS_%s_%s.xml'%(opts.channel,opts.signal), 'w') as f:													    
+ with open('config/syst/Dijet_docentralValueJMS_%s.xml'%(opts.signal), 'w') as f:													    
   f.write('<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE JobConfiguration PUBLIC "" "/shome/jngadiub/EXOVVAnalysisRunII/SFrame-04-00-01/user/config/JobConfig.dtd">\n')      
   tree.write(f, 'utf-8')																		    
  																					    
- cmd = 'sframe_main config/syst/docentralValueJMS_%s_%s.xml' %(opts.channel,opts.signal)												    
+ cmd = 'sframe_main config/syst/Dijet_docentralValueJMS_%s.xml' %(opts.signal)												    
  print cmd																				    
  os.system(cmd) 
  
  for mass in masses:																			    
-  cmd = 'mv ../AnalysisOutput/JMSsys/ExoDiBosonAnalysis.%s.M-%i.%s.root centralValueJMS/ExoDiBosonAnalysis.%s.M-%i.%s.root' %(opts.signal,mass,opts.channel,opts.signal,mass,opts.channel) 			    
+  cmd = 'mv ../AnalysisOutput/JMSsys/ExoDiBosonAnalysis.%s.M-%i.dijet.root centralValueJMS/ExoDiBosonAnalysis.%s.M-%i.dijet.root' %(opts.signal,mass,opts.signal,mass) 			    
   print cmd																				    
   os.system(cmd) 																			    
 
  ############### do btag sf up ####################																		       
- status,ls_la = commands.getstatusoutput( 'ls -l JMSUp/')													       
+ status,ls_la = commands.getstatusoutput( 'ls -l JMSUp/' )													       
  if status:																				       
     os.system('mkdir JMSUp/') 																	       
 
@@ -95,21 +92,21 @@ if opts.syst:
     if i.get('Name') == 'ScaleJMSDown':		    
        i.set('Value','false')  
                																					    
- with open('config/syst/doJMSUp_%s_%s.xml'%(opts.channel,opts.signal), 'w') as f:													    
+ with open('config/syst/Dijet_doJMSUp_%s.xml'%(opts.signal), 'w') as f:													    
   f.write('<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE JobConfiguration PUBLIC "" "/shome/jngadiub/EXOVVAnalysisRunII/SFrame-04-00-01/user/config/JobConfig.dtd">\n')      
   tree.write(f, 'utf-8')																		    
  																					    
- cmd = 'sframe_main config/syst/doJMSUp_%s_%s.xml' %(opts.channel,opts.signal)												    
+ cmd = 'sframe_main config/syst/Dijet_doJMSUp_%s.xml' %(opts.signal)												    
  print cmd																				    
  os.system(cmd) 
  
  for mass in masses:																			    
-  cmd = 'mv ../AnalysisOutput/JMSsys/ExoDiBosonAnalysis.%s.M-%i.%s.root JMSUp/ExoDiBosonAnalysis.%s.M-%i.%s.root' %(opts.signal,mass,opts.channel,opts.signal,mass,opts.channel) 			    
+  cmd = 'mv ../AnalysisOutput/JMSsys/ExoDiBosonAnalysis.%s.M-%i.dijet.root JMSUp/ExoDiBosonAnalysis.%s.M-%i.dijet.root' %(opts.signal,mass,opts.signal,mass) 			    
   print cmd																				    
   os.system(cmd) 
 
  ############### do btag sf down ####################																		       
- status,ls_la = commands.getstatusoutput( 'ls -l JMSDown/')													       
+ status,ls_la = commands.getstatusoutput( 'ls -l JMSDown/' )													       
  if status:																				       
     os.system('mkdir JMSDown/') 																	       
 
@@ -128,55 +125,74 @@ if opts.syst:
     if i.get('Name') == 'ScaleJMSUp':		    
        i.set('Value','false')
     if i.get('Name') == 'ScaleJMSDown':		    
-       i.set('Value','false')       
+       i.set('Value','false')
                																					    
- with open('config/syst/doJMSDown_%s_%s.xml'%(opts.channel,opts.signal), 'w') as f:													    
+ with open('config/syst/Dijet_doJMSDown_%s.xml'%(opts.signal), 'w') as f:													    
   f.write('<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE JobConfiguration PUBLIC "" "/shome/jngadiub/EXOVVAnalysisRunII/SFrame-04-00-01/user/config/JobConfig.dtd">\n')      
   tree.write(f, 'utf-8')																		    
  																					    
- cmd = 'sframe_main config/syst/doJMSDown_%s_%s.xml' %(opts.channel,opts.signal)												    
+ cmd = 'sframe_main config/syst/Dijet_doJMSDown_%s.xml' %(opts.signal)												    
  print cmd																				    
  os.system(cmd) 
  
  for mass in masses:																			    
-  cmd = 'mv ../AnalysisOutput/JMSsys/ExoDiBosonAnalysis.%s.M-%i.%s.root JMSDown/ExoDiBosonAnalysis.%s.M-%i.%s.root' %(opts.signal,mass,opts.channel,opts.signal,mass,opts.channel) 			    
+  cmd = 'mv ../AnalysisOutput/JMSsys/ExoDiBosonAnalysis.%s.M-%i.dijet.root JMSDown/ExoDiBosonAnalysis.%s.M-%i.dijet.root' %(opts.signal,mass,opts.signal,mass) 			    
   print cmd																				    
   os.system(cmd) 
-          
-##############################################################
-#####calculate yields#####
-##############################################################
 
-fout = ['JMSsys_%s_HPV_%s.txt'%(opts.channel,opts.signal),'JMSsys_%s_LPV_%s.txt'%(opts.channel,opts.signal),
-        'JMSsys_%s_HPW_%s.txt'%(opts.channel,opts.signal),'JMSsys_%s_LPW_%s.txt'%(opts.channel,opts.signal),          
-        'JMSsys_%s_HPZ_%s.txt'%(opts.channel,opts.signal),'JMSsys_%s_LPZ_%s.txt'%(opts.channel,opts.signal)]          
+fout = ['JMSsys_HP_VV_%s.txt'%(opts.signal),'JMSsys_LP_VV_%s.txt'%(opts.signal),
+        'JMSsys_HP_WW_%s.txt'%(opts.signal),'JMSsys_LP_WW_%s.txt'%(opts.signal),          
+        'JMSsys_HP_WZ_%s.txt'%(opts.signal),'JMSsys_LP_WZ_%s.txt'%(opts.signal),          
+        'JMSsys_HP_ZZ_%s.txt'%(opts.signal),'JMSsys_LP_ZZ_%s.txt'%(opts.signal)]          
 
 cuts = []
 debugs = []
 
 debugs.append("VV HP category")
-cut =  "Mjpruned > 65 && Mjpruned < 105 && tau21 < 0.6"
+cut =  "Mjpruned_1 > 65 && Mjpruned_1 < 105 && tau21_1 < 0.45"
+cut += " && Mjpruned_2 > 65 && Mjpruned_2 < 105 && tau21_2 < 0.45"  
 cuts.append(cut)
 
 debugs.append("VV LP category")
-cut =  "Mjpruned > 65 && Mjpruned < 105 && tau21 > 0.6 && tau21 < 0.75"
+cut =  "Mjpruned_1 > 65 && Mjpruned_1 < 105 && Mjpruned_2 > 65 && Mjpruned_2 < 105"
+cut += " && ( (tau21_1 < 0.45 && tau21_2 > 0.45 && tau21_2 < 0.75) || (tau21_2 < 0.45 && tau21_1 > 0.45 && tau21_1 < 0.75) )" 
 cuts.append(cut)
 
 debugs.append("WW HP category")
-cut =  "Mjpruned > 65 && Mjpruned < 85 && tau21 < 0.6"
+cut =  "Mjpruned_1 > 65 && Mjpruned_1 < 85 && tau21_1 < 0.45"
+cut += " && Mjpruned_2 > 65 && Mjpruned_2 < 85 && tau21_2 < 0.45"  
 cuts.append(cut)
 
 debugs.append("WW LP category")
-cut =  "Mjpruned > 65 && Mjpruned < 85 && tau21 > 0.6 && tau21 < 0.75"
+cut =  "Mjpruned_1 > 65 && Mjpruned_1 < 85 && Mjpruned_2 > 65 && Mjpruned_2 < 85"
+cut += " && ( (tau21_1 < 0.45 && tau21_2 > 0.45 && tau21_2 < 0.75) || (tau21_2 < 0.45 && tau21_1 > 0.45 && tau21_1 < 0.75) )" 
 cuts.append(cut)
 
 debugs.append("WZ HP category")
-cut =  "Mjpruned > 85 && Mjpruned < 105 && tau21 < 0.6"
+cut =  " ((Mjpruned_1 > 65 && Mjpruned_1 < 85 && Mjpruned_2 > 85 && Mjpruned_1 < 105)"
+cut += " || (Mjpruned_2 > 65 && Mjpruned_2 < 85 && Mjpruned_1 > 85 && Mjpruned_1 < 105)) "
+cut += " && tau21_1 < 0.45 && tau21_2 < 0.45"  
 cuts.append(cut)
 
 debugs.append("WZ LP category")
-cut =  "Mjpruned > 85 && Mjpruned < 105 && tau21 > 0.6 && tau21 < 0.75"
+cut =  " ((Mjpruned_1 > 65 && Mjpruned_1 < 85 && Mjpruned_2 > 85 && Mjpruned_1 < 105)"
+cut += " || (Mjpruned_2 > 65 && Mjpruned_2 < 85 && Mjpruned_1 > 85 && Mjpruned_1 < 105)) "
+cut += " && ( (tau21_1 < 0.45 && tau21_2 > 0.45 && tau21_2 < 0.75) || (tau21_2 < 0.45 && tau21_1 > 0.45 && tau21_1 < 0.75) ) "  
 cuts.append(cut)
+
+debugs.append("ZZ HP category")
+cut =  "Mjpruned_1 > 85 && Mjpruned_1 < 105 && tau21_1 < 0.45"
+cut += " && Mjpruned_2 > 85 && Mjpruned_2 < 105 && tau21_2 < 0.45"  
+cuts.append(cut)
+
+debugs.append("ZZ LP category")
+cut =  "Mjpruned_1 > 85 && Mjpruned_1 < 105 && Mjpruned_2 > 85 && Mjpruned_2 < 105"
+cut += " && ( (tau21_1 < 0.45 && tau21_2 > 0.45 && tau21_2 < 0.75) || (tau21_2 < 0.45 && tau21_1 > 0.45 && tau21_1 < 0.75) )" 
+cuts.append(cut)
+
+##############################################################
+#####calculate yields for VV HP#####
+##############################################################
 
 for f in range(len(fout)):
 
@@ -192,7 +208,7 @@ for f in range(len(fout)):
 
    print "######## Mass = %i #########" %mass
      
-   fname = 'centralValueJMS/ExoDiBosonAnalysis.%s.M-%i.%s.root' %(opts.signal,mass,opts.channel)
+   fname = 'centralValueJMS/ExoDiBosonAnalysis.%s.M-%i.dijet.root' %(opts.signal,mass)
    tfile = ROOT.TFile.Open(fname,'READ')
    tree = tfile.Get("tree")
    cv = float(tree.GetEntries(cuts[f]))
@@ -200,7 +216,7 @@ for f in range(len(fout)):
    tfile.Close()
    tfile.Delete() 
 
-   fname = 'JMSUp/ExoDiBosonAnalysis.%s.M-%i.%s.root' %(opts.signal,mass,opts.channel)
+   fname = 'JMSUp/ExoDiBosonAnalysis.%s.M-%i.dijet.root' %(opts.signal,mass)
    tfile = ROOT.TFile.Open(fname,'READ')
    tree = tfile.Get("tree")
    btagup = float(tree.GetEntries(cuts[f]))  
@@ -208,7 +224,7 @@ for f in range(len(fout)):
    tfile.Close()
    tfile.Delete()
 
-   fname = 'JMSDown/ExoDiBosonAnalysis.%s.M-%i.%s.root' %(opts.signal,mass,opts.channel)
+   fname = 'JMSDown/ExoDiBosonAnalysis.%s.M-%i.dijet.root' %(opts.signal,mass)
    tfile = ROOT.TFile.Open(fname,'READ')
    tree = tfile.Get("tree")
    btagdown = float(tree.GetEntries(cuts[f]))
@@ -220,12 +236,13 @@ for f in range(len(fout)):
    sdown = btagdown-cv
    #if sup < 0 and sdown < 0: sdown = -sdown      
      
-   if opts.signal == 'BulkGraviton':  
-    outfile.write('BulkG_WW_lvjj_M%i %.3f %.3f\n' %(mass,sup*100/cv,sdown*100/cv))
+   if opts.signal == 'BulkGraviton_WW':  
+    outfile.write('BulkG_WW_M%i %.3f %.3f\n' %(mass,sup*100/cv,sdown*100/cv))
+   elif opts.signal == 'BulkGraviton_ZZ':  
+    outfile.write('BulkG_ZZ_M%i %.3f %.3f\n' %(mass,sup*100/cv,sdown*100/cv))
    elif opts.signal == 'Wprime':
-    outfile.write('Wprime_WZ_lvjj_M%i %.3f %.3f\n' %(mass,sup*100/cv,sdown*100/cv))
-   elif opts.signal == 'Zprime':
-    outfile.write('Zprime_WZ_lvjj_M%i %.3f %.3f\n' %(mass,sup*100/cv,sdown*100/cv))
-    
+    outfile.write('Wprime_WZ_M%i %.3f %.3f\n' %(mass,sup*100/cv,sdown*100/cv))
+
  outfile.close()
+
 

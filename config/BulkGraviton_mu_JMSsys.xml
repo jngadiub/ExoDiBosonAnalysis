@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE JobConfiguration PUBLIC "" "/shome/jngadiub/EXOVVAnalysisRunII/SFrame-04-00-01/user/config/JobConfig.dtd">
 <JobConfiguration JobName="exovvJob" OutputLevel="INFO">
+  <Library Name="libGoodRunsLists" />
   <Library Name="libExoDiBosonAnalysis" />
 
   <Package Name="SFrameCore.par" />
@@ -8,17 +9,17 @@
 
   <Cycle Name="ExoDiBosonAnalysis" RunMode="LOCAL" ProofServer="lite" ProofWorkDir="" OutputDirectory="../AnalysisOutput/JMSsys/" PostFix="" TargetLumi="1.0">
 
-    <InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-800.mu" >
+    <!--InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-800.mu" >
       <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/BulkGravToWWToWlepWhad_narrow_M_800/EXOVVTree_BulkGravToWWToWlepWhad_narrow_M_800_v2_1.root" Lumi="1.0"/>
       <InputTree Name="ntuplizer/tree" />
       <OutputTree Name="tree" />
-    </InputData>
-    <!--InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-1000.mu" >
-      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15/BulkGravToWWToWlepWhad_narrow_M_1000/EXOVVTree_BulkGravToWWToWlepWhad_narrow_M_1000_1.root" Lumi="1.0"/>
+    </InputData-->
+    <InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-1000.mu" >
+      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/BulkGravToWWToWlepWhad_narrow_M_1000/EXOVVTree_BulkGravToWWToWlepWhad_narrow_M_1000_1.root" Lumi="1.0"/>
       <InputTree Name="ntuplizer/tree" />
       <OutputTree Name="tree" />
-    </InputData-->
-    <InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-1200.mu" >
+    </InputData>
+    <!--InputData Lumi="0.0" Type="BulkGraviton" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-1200.mu" >
       <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/BulkGravToWWToWlepWhad_narrow_M_1200/EXOVVTree_BulkGravToWWToWlepWhad_narrow_M_1200_v2_1.root" Lumi="1.0"/>
       <InputTree Name="ntuplizer/tree" />
       <OutputTree Name="tree" />
@@ -67,7 +68,7 @@
       <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/BulkGravToWWToWlepWhad_narrow_M_4500/EXOVVTree_BulkGravToWWToWlepWhad_narrow_M_4500_v2_1.root" Lumi="1.0"/>
       <InputTree Name="ntuplizer/tree" />
       <OutputTree Name="tree" />
-    </InputData>
+    </InputData-->
                                 
     <UserConfig>
     

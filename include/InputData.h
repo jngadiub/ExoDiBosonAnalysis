@@ -92,6 +92,7 @@ public:
    std::vector<float>*		   jetAK8_tau2	     	 ;
    std::vector<float>*		   jetAK8_tau3	     	 ;
    std::vector<bool  >*  	   jetAK8_IDLoose        ;  
+   std::vector<bool  >*  	   jetAK8_IDTight        ;  
    std::vector<int   >*  	   jetAK8_flavor         ;
    std::vector<int   >*  	   jetAK8_nconstituents  ;
    std::vector<float>*		   jetAK8_jecUp	     	 ;

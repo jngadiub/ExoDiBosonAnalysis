@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE JobConfiguration PUBLIC "" "/shome/jngadiub/EXOVVAnalysisRunII/SFrame-04-00-01/user/config/JobConfig.dtd">
 <JobConfiguration JobName="exovvJob" OutputLevel="INFO">
+  <Library Name="libGoodRunsLists" />
   <Library Name="libExoDiBosonAnalysis" />
 
   <Package Name="SFrameCore.par" />

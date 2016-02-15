@@ -7,65 +7,65 @@
   <Package Name="SFrameCore.par" />
   <Package Name="ExoDiBosonAnalysis.par" />
 
-  <Cycle Name="ExoDiBosonAnalysis" RunMode="LOCAL" ProofServer="lite" ProofWorkDir="" OutputDirectory="../AnalysisOutput/JMSsys/" PostFix="" TargetLumi="1.0">
+  <Cycle Name="ExoDiBosonAnalysis" RunMode="LOCAL" ProofServer="lite" ProofWorkDir="" OutputDirectory="../AnalysisOutput/JESsys/" PostFix="" TargetLumi="1.0">
 
-    <InputData Lumi="0.0" Type="Wprime" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-800.el" >
-      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/WprimeToWZToWlepZhad_narrow_M-800/EXOVVTree_WprimeToWZToWlepZhad_narrow_M-800_v2_1.root" Lumi="1.0"/>
+    <InputData Lumi="0.0" Type="Zprime" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-800.mu" >
+      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/ZprimeToWWToWlepWhad_narrow_M-800/EXOVVTree_ZprimeToWWToWlepWhad_narrow_M-800_1.root" Lumi="1.0"/>
       <InputTree Name="ntuplizer/tree" />
       <OutputTree Name="tree" />
     </InputData>
-    <InputData Lumi="0.0" Type="Wprime" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-1000.el" >
-      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/WprimeToWZToWlepZhad_narrow_M-1000/EXOVVTree_WprimeToWZToWlepZhad_narrow_M-1000_v2_1.root" Lumi="1.0"/>
+    <InputData Lumi="0.0" Type="Zprime" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-1000.mu" >
+      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/ZprimeToWWToWlepWhad_narrow_M-1000/EXOVVTree_ZprimeToWWToWlepWhad_narrow_M-1000_1.root" Lumi="1.0"/>
       <InputTree Name="ntuplizer/tree" />
       <OutputTree Name="tree" />
     </InputData>
-    <InputData Lumi="0.0" Type="Wprime" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-1200.el" >
-      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/WprimeToWZToWlepZhad_narrow_M-1200/EXOVVTree_WprimeToWZToWlepZhad_narrow_M-1200_v2_1.root" Lumi="1.0"/>
+    <InputData Lumi="0.0" Type="Zprime" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-1200.mu" >
+      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/ZprimeToWWToWlepWhad_narrow_M-1200/EXOVVTree_ZprimeToWWToWlepWhad_narrow_M-1200_1.root" Lumi="1.0"/>
       <InputTree Name="ntuplizer/tree" />
       <OutputTree Name="tree" />
     </InputData>
-    <InputData Lumi="0.0" Type="Wprime" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-1400.el" >
-      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/WprimeToWZToWlepZhad_narrow_M-1400/EXOVVTree_WprimeToWZToWlepZhad_narrow_M-1400_v2_1.root" Lumi="1.0"/>
+    <InputData Lumi="0.0" Type="Zprime" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-1400.mu" >
+      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/ZprimeToWWToWlepWhad_narrow_M-1400/EXOVVTree_ZprimeToWWToWlepWhad_narrow_M-1400_1.root" Lumi="1.0"/>
       <InputTree Name="ntuplizer/tree" />
       <OutputTree Name="tree" />
     </InputData>
-    <InputData Lumi="0.0" Type="Wprime" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-1600.el" >
-      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/WprimeToWZToWlepZhad_narrow_M-1600/EXOVVTree_WprimeToWZToWlepZhad_narrow_M-1600_v2_1.root" Lumi="1.0"/>
+    <!--InputData Lumi="0.0" Type="Zprime" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-1600.mu" >
+      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/ZprimeToWWToWlepWhad_narrow_M-1600/EXOVVTree_ZprimeToWWToWlepWhad_narrow_M-1600_1.root" Lumi="1.0"/>
+      <InputTree Name="ntuplizer/tree" />
+      <OutputTree Name="tree" />
+    </InputData-->
+    <InputData Lumi="0.0" Type="Zprime" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-1800.mu" >
+      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/ZprimeToWWToWlepWhad_narrow_M-1800/EXOVVTree_ZprimeToWWToWlepWhad_narrow_M-1800_1.root" Lumi="1.0"/>
       <InputTree Name="ntuplizer/tree" />
       <OutputTree Name="tree" />
     </InputData>
-    <InputData Lumi="0.0" Type="Wprime" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-1800.el" >
-      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/WprimeToWZToWlepZhad_narrow_M-1800/EXOVVTree_WprimeToWZToWlepZhad_narrow_M-1800_v2_1.root" Lumi="1.0"/>
+    <InputData Lumi="0.0" Type="Zprime" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-2000.mu" >
+      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/ZprimeToWWToWlepWhad_narrow_M-2000/EXOVVTree_ZprimeToWWToWlepWhad_narrow_M-2000_1.root" Lumi="1.0"/>
       <InputTree Name="ntuplizer/tree" />
       <OutputTree Name="tree" />
     </InputData>
-    <InputData Lumi="0.0" Type="Wprime" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-2000.el" >
-      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/WprimeToWZToWlepZhad_narrow_M-2000/EXOVVTree_WprimeToWZToWlepZhad_narrow_M-2000_v2_1.root" Lumi="1.0"/>
+    <InputData Lumi="0.0" Type="Zprime" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-2500.mu" >
+      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/ZprimeToWWToWlepWhad_narrow_M-2500/EXOVVTree_ZprimeToWWToWlepWhad_narrow_M-2500_1.root" Lumi="1.0"/>
       <InputTree Name="ntuplizer/tree" />
       <OutputTree Name="tree" />
     </InputData>
-    <InputData Lumi="0.0" Type="Wprime" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-2500.el" >
-      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/WprimeToWZToWlepZhad_narrow_M-2500/EXOVVTree_WprimeToWZToWlepZhad_narrow_M-2500_v2_1.root" Lumi="1.0"/>
+    <InputData Lumi="0.0" Type="Zprime" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-3000.mu" >
+      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/ZprimeToWWToWlepWhad_narrow_M-3000/EXOVVTree_ZprimeToWWToWlepWhad_narrow_M-3000_1.root" Lumi="1.0"/>
       <InputTree Name="ntuplizer/tree" />
       <OutputTree Name="tree" />
     </InputData>
-    <InputData Lumi="0.0" Type="Wprime" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-3000.el" >
-      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/WprimeToWZToWlepZhad_narrow_M-3000/EXOVVTree_WprimeToWZToWlepZhad_narrow_M-3000_v2_1.root" Lumi="1.0"/>
+    <InputData Lumi="0.0" Type="Zprime" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-3500.mu" >
+      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/ZprimeToWWToWlepWhad_narrow_M-3500/EXOVVTree_ZprimeToWWToWlepWhad_narrow_M-3500_1.root" Lumi="1.0"/>
       <InputTree Name="ntuplizer/tree" />
       <OutputTree Name="tree" />
     </InputData>
-    <InputData Lumi="0.0" Type="Wprime" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-3500.el" >
-      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/WprimeToWZToWlepZhad_narrow_M-3500/EXOVVTree_WprimeToWZToWlepZhad_narrow_M-3500_v2_1.root" Lumi="1.0"/>
+    <InputData Lumi="0.0" Type="Zprime" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-4000.mu" >
+      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/ZprimeToWWToWlepWhad_narrow_M-4000/EXOVVTree_ZprimeToWWToWlepWhad_narrow_M-4000_1.root" Lumi="1.0"/>
       <InputTree Name="ntuplizer/tree" />
       <OutputTree Name="tree" />
     </InputData>
-    <InputData Lumi="0.0" Type="Wprime" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-4000.el" >
-      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/WprimeToWZToWlepZhad_narrow_M-4000/EXOVVTree_WprimeToWZToWlepZhad_narrow_M-4000_v2_1.root" Lumi="1.0"/>
-      <InputTree Name="ntuplizer/tree" />
-      <OutputTree Name="tree" />
-    </InputData>
-    <InputData Lumi="0.0" Type="Wprime" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-4500.el" >
-      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/WprimeToWZToWlepZhad_narrow_M-4500/EXOVVTree_WprimeToWZToWlepZhad_narrow_M-4500_v2_1.root" Lumi="1.0"/>
+    <InputData Lumi="0.0" Type="Zprime" NEventsMax="-1" NEventsSkip="0" SkipValid="True" Version="M-4500.mu" >
+      <In FileName="root://t3dcachedb.psi.ch:1094/pnfs/psi.ch/cms/trivcat/store/t3groups/uniz-higgs/Spring15_reMiniAOD/ZprimeToWWToWlepWhad_narrow_M-4500/EXOVVTree_ZprimeToWWToWlepWhad_narrow_M-4500_1.root" Lumi="1.0"/>
       <InputTree Name="ntuplizer/tree" />
       <OutputTree Name="tree" />
     </InputData>
@@ -79,17 +79,17 @@
       <Item Name="runOnMC" Value="true" />
       <Item Name="GenFilter" Value="false" />
       <Item Name="Flavour" Value="bb" />
-      <Item Name="Channel" Value="electron" />
+      <Item Name="Channel" Value="muon" />
       <Item Name="Trigger" Value="true" />
       <Item Name="Synch" Value="false" />
       <Item Name="applyFilters" Value="true" />
 
       <!--leptonic selections-->
-      <Item Name="LeptPtCut" Value="120" />
-      <Item Name="LeptEtaCut" Value="2.5" />
-      <Item Name="AleptPtCut" Value="35" />
-      <Item Name="AleptEtaCut" Value="2.5" />
-      <Item Name="METCut" Value="80" />
+      <Item Name="LeptPtCut" Value="53" />
+      <Item Name="LeptEtaCut" Value="2.1" />
+      <Item Name="AleptPtCut" Value="20" />
+      <Item Name="AleptEtaCut" Value="2.4" />
+      <Item Name="METCut" Value="40" />
       <Item Name="WptCut" Value="200" />
       
       <!--jet selections-->
