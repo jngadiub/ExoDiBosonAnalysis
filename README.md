@@ -5,6 +5,7 @@ exo-vv analyzer
 
 2) check out and compile SFrame analysis framework
 
+```
    mkdir YOURANALYSISDIR
    cd YOURANALYSISDIR
    svn co https://svn.code.sf.net/p/sframe/code/SFrame/tags/SFrame-04-00-01 SFrame-04-00-01
@@ -12,7 +13,7 @@ exo-vv analyzer
    source setup.sh
    make
    cd ../
-  
+```  
 3) create the ExoDiBosonAnalysis analysis package in SFrame otherwise SFrame does not know that it exists
 
    sframe_new_package.sh ExoDiBosonAnalysis
