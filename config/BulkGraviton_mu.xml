@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE JobConfiguration PUBLIC "" "/shome/jngadiub/EXOVVAnalysisRunII/SFrame-04-00-01/user/config/JobConfig.dtd">
+<!DOCTYPE JobConfiguration PUBLIC "" "JobConfig.dtd">
 <JobConfiguration JobName="exovvJob" OutputLevel="INFO">
   <Library Name="libGoodRunsLists" />
   <Library Name="libExoDiBosonAnalysis" />
@@ -127,7 +127,7 @@
       <Item Name="xSec" Value="1." />
       <Item Name="genEvents" Value="1." />
       <Item Name="Lumi" Value="1." />
-      <Item Name="PUdata" Value="/shome/jngadiub/EXOVVAnalysisRunII/ExoDiBosonAnalysis/data/biasXsec_72000.root" />
+      <Item Name="PUdata" Value="data/biasXsec_72000.root" />
       <Item Name="BTagEff4vetoData" Value="data/TT_CT10_TuneZ2star_8TeV-powheg-tauola_AK5PF_CSVM_bTaggingEfficiencyMap.root" />
       <Item Name="BTagEff4fatjetData" Value="data/BtagEfficienciesMap_fatjets_Wp.root" />
       <Item Name="BTagEff4subjetData" Value="data/btag-efficiency-maps.root" />
